@@ -1,20 +1,18 @@
-from src.power import power_function
-from src.constants import SAMPLE_CONSTANT
+from src.simulation import run_simulation
 
 
 def main() -> None:
-    """
-    Обязательнная составляющая программ, которые сдаются. Является точкой входа в приложение
-    :return: Данная функция ничего не возвращает
-    """
 
-    target, degree = map(int, input("Введите два числа разделенные пробелом: ").split(" "))
+    steps = 20
+    print("Приветствую в симуляции управления библиотекой\nПо умолчанию количество шагов в первой симуляции равно 20")
+    while steps:
+        run_simulation(steps)
+        try:
+            steps = int(input(
+                "Введите количество шагов в симуляции (для окончания программы введите 0): "))
+        except TypeError:
+            print("Количество шагов должно быть целым числом")
 
-    result = power_function(target=target, power=degree)
-
-    print(result)
-
-    print(SAMPLE_CONSTANT)
 
 if __name__ == "__main__":
     main()
