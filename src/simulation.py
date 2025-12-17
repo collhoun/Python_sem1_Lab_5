@@ -1,6 +1,6 @@
 import random
 import time
-from src.books import Library
+from src.mistake_clases import LibraryMistake1
 from src.constants import BOOKS_OBJECTS, POSSIBLE_EVENTS, EVENT_WEIGHTS
 
 
@@ -60,8 +60,9 @@ def run_simulation(steps: int = 20, seed: int | None = None) -> None:
             print(e)
 
 
-def fill_the_lib_randomly(books_number: int = 10, seed: int | None = None) -> Library:
-    """заполняет библиотеку случайными книгами
+def fill_the_lib_randomly(books_number: int = 10, seed: int | None = None) -> LibraryMistake1:
+    """заполняет библиотеку случайными книгами 
+    НЕПРАВИЛЬНО ВЕРСИЯ ЗАПОЛНЕНИЯ БИБЛИОТЕКИ!!!!!!!!!
 
     Args:
         books_number (int, optional): начально еоличество книг в библиотеке. Defaults to 10.
@@ -70,7 +71,7 @@ def fill_the_lib_randomly(books_number: int = 10, seed: int | None = None) -> Li
     Returns:
         Library: обьект библиотеки
     """
-    lib = Library()
+    lib = LibraryMistake1()
     if seed is not None:
         random.seed(seed)
     rng = random.Random(seed)

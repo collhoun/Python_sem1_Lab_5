@@ -199,7 +199,7 @@ class IndexDict:
             if not self._years[book.year]:
                 del self._years[book.year]
 
-    def search_book(self, criteria_key: str, criteria_value: str):
+    def search_book(self, criteria_key: str, criteria_value: str) -> None | Book | BookCollection:
         """метод для поиска книги по критерию и его значению
 
         Args:
@@ -327,18 +327,3 @@ class Library:
             BookCollection: коллекция книг в библиотеке
         """
         return self.book_collection
-
-
-book1 = Book("1984", "George Orwell", 1949, "Dystopian", "1234567890")
-book2 = Book("1984", "George Orwell", 1949, "Dystopian", "1234567890")
-book3 = Book("Brave New World", "Aldous Huxley",
-             1932, "Science Fiction", "0987654321")
-book4 = Book("Brave New World", "Aldous Huxley",
-             1932, "Science Fiction", "0987654321")
-book_collection1 = BookCollection()
-book_collection2 = BookCollection()
-book_collection1.add_book(book1)
-book_collection1.add_book(book3)
-book_collection2.add_book(book4)
-book_collection2.add_book(book2)
-print(book_collection2 == book_collection1)
